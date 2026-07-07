@@ -69,13 +69,27 @@ This dataset is designed for machine learning-based performance analysis.
 
 ---
 
-### 🤖 4. Machine Learning Evaluation
+### 🤖 Machine Learning Evaluation
 
-User performance is evaluated using a scoring system based on collected behavioral data. The system returns:
+The trainee evaluation system is based on a stacked ensemble learning architecture.
 
-* Final score
-* Safety level classification
-* Personalized feedback
+Behavioral data collected during the VR training session is processed by three base machine learning models:
+
+- Decision Tree
+- Random Forest
+- XGBoost
+
+Each base model generates an independent performance prediction score.
+
+The outputs of these models are then provided to a LightGBM meta-model, which has been trained to combine their predictions and generate a final evaluation score.
+
+This ensemble approach improves robustness and prediction accuracy by leveraging the strengths of multiple machine learning algorithms instead of relying on a single model.
+
+The final output includes:
+
+- Performance score
+- Safety level classification
+- Personalized feedback
 
 ---
 
